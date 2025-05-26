@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-none{
+  @apply hidden
+}
+
+/* index.css */
+body {
+  font-family: 'Poppins', sans-serif;
+}
