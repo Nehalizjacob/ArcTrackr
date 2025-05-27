@@ -1,18 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AdminRegister from './Components/Admin/AdminRegister';
 
-function App() {
+function AdminDashboard() {
   return (
-    <Router>
-      <Routes>
-      <Route path="/adminregister" element={<AdminRegister />} />
-
-      </Routes>
-
-    </Router>
-    
+    <div>
+      <h1> AdminDashboard</h1>
+      </div>
   )
 }
 
-export default App
+export default AdminDashboard
