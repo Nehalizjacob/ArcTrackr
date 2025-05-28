@@ -65,11 +65,11 @@ function AdminNavbar() {
             >
               Dashboard
             </a>
-            <a
-              href="/addsitvisit"
+                 <a
+              href="/sitevisits"
               className="block md:inline-block text-navy hover:text-yellow-400 px-3 py-3 border-b-2 border-transparent md:border-none"
             >
-              Add Site visit
+              Site Visit Management System
             </a>
           </div>
         </div>

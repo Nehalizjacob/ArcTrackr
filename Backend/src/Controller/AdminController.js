@@ -1,6 +1,7 @@
 import User from  '../Model/userModel.js'
 import generateToken from "../Utils/generateToken.js"
 import jwt from 'jsonwebtoken';
+import SiteVisit from '../Model/Sitevisitmodel.js';
 
 const register =async(req,res)=>{
     const{name,email,password}=req.body
@@ -62,6 +63,47 @@ const adminlogin = async (req, res) => {
         .json({error: "An error occurred. Please try again later." });
     }
   };
+const addSiteVisit= async(req,res)=>{
+      try{
+          const { department,batch, siteName, location, visitDate, status} = req.body; 
+          
+          console.log(department,"department")
+           
+        const newSiteVisit = await SiteVisit.create({
+        department,batch, siteName, location, visitDate, status
+        });
+    
+        if (newSiteVisit) {
+         
+            res.status(201).json({
+            department,batch, siteName, location, visitDate, status,
+              message :"SiteVisit added successfully"
+            });
+          } else {
+            res.status(400).json({ error: 'Invalid SiteVisit data' });
+          }
+            }
+      catch(error){
+        return res.status(500).json({ message: "An error occurred. Please try again later." });  
+      }}
+
+const getAllSiteVisit = async (req, res) => {
+        try {
+          const sitevisitDetails = await SiteVisit.find().exec();
+          if (sitevisitDetails) {      
+           res.status(200).json({
+              sitevisitDetails,
+              message:"sitevisitDetails"
+            });
+          } else {
+            return res.status(400).json({
+              message: "no sitevisits in this table",
+            });
+          }
+        } catch (error) {
+          return res.status(500).json({ message: "An error occurred. Please try again later." });  
+        }
+      };
 
 
-export{register,adminlogin}
+export{register,adminlogin,addSiteVisit,getAllSiteVisit}

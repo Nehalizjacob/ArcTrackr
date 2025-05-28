@@ -4,6 +4,7 @@ import AdminRegister from './Components/Admin/AdminRegister';
 import Adminlogin from './Components/Admin/Adminlogin';
 import AdminhomePage from './Pages/AdminhomePage';
 import AddSiteVisit from './Components/Admin/AddSiteVisit';
+import SiteVisitList from './Components/Admin/SiteVisitList';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
        <Route path="/admin" element={<Adminlogin />} />
       <Route path="/admindashboard" element={<AdminhomePage />} />
       <Route path="/addsitevisit" element={<AddSiteVisit/>} />
+      <Route path="/sitevisits" element={<SiteVisitList/>} />
       </Routes>
 
     </Router>
