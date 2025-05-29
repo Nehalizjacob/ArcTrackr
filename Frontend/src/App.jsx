@@ -5,16 +5,19 @@ import Adminlogin from './Components/Admin/Adminlogin';
 import AdminhomePage from './Pages/AdminhomePage';
 import AddSiteVisit from './Components/Admin/AddSiteVisit';
 import SiteVisitList from './Components/Admin/SiteVisitList';
-
+import EditSiteVisit from './Components/Admin/EditSiteVisit';
+import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <Router>
+      <Toaster position="top-right"/>
       <Routes>
       <Route path="/adminregister" element={<AdminRegister />} />
        <Route path="/admin" element={<Adminlogin />} />
       <Route path="/admindashboard" element={<AdminhomePage />} />
       <Route path="/addsitevisit" element={<AddSiteVisit/>} />
       <Route path="/sitevisits" element={<SiteVisitList/>} />
+     <Route path="/editsitevisit/:id" element={<EditSiteVisit/>} />
       </Routes>
 
     </Router>
