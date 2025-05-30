@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import LineChart from "../Admin/LineChart";
+import LineChart from "./Linechart";
 import {
   FaChartLine,
   FaUsers,
