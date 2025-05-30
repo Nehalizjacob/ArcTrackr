@@ -6,11 +6,19 @@ import router from "./Routes/AdminRoutes.js"
 dotenv.config()
 import { connectDB } from "./config/db.js"
 connectDB()
-app.use(cors({
-  origin: 'http://localhost:4000',
-  credentials: true,
-}));
 
+const corsOptions = {
+  origin: [
+    'http://localhost:4000',
+    'http://localhost:3000',
+    'https://arc-trackr-mu.vercel.app',
+    'https://arctrackr-v71m.onrender.com'
+  ],
+  methods: "GET,POST,PUT,DELETE,PATCH",
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+};
+app.use(cors(corsOptions));
 
 const port = process.env.PORT || 3000
 app.use(express.json());
