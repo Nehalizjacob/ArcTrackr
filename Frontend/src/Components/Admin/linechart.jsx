@@ -24,6 +24,7 @@ ChartJS.register(
 // Chart configuration options
 export const options = {
   responsive: true,
+  maintainAspectRatio: false, // ✅ Important for responsive height
   plugins: {
     legend: {
       position: "top",
@@ -35,26 +36,25 @@ export const options = {
   },
 };
 
-const LineChart = () => {
-  // Example data: site visits and unique visitors per month
-  const siteVisitsMonthlyData = [3200, 4500, 4900, 4100, 5200, 6100, 5800, 6200, 6400, 7000, 7300, 7100];
-  const uniqueVisitorsMonthlyData = [1800, 2100, 2300, 1900, 2500, 2700, 2600, 2800, 3000, 3300, 3400, 3200];
-
-  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const LineChart = ({ data1, data2 }) => {
+  const labels = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
 
   const data = {
     labels,
     datasets: [
       {
         label: "Site Visits",
-        data: siteVisitsMonthlyData,
+        data: data1,
         borderColor: "rgb(54, 162, 235)",
         backgroundColor: "rgba(54, 162, 235, 0.5)",
         tension: 0.4,
       },
       {
         label: "Unique Visitors",
-        data: uniqueVisitorsMonthlyData,
+        data: data2,
         borderColor: "rgb(255, 206, 86)",
         backgroundColor: "rgba(255, 206, 86, 0.5)",
         tension: 0.4,

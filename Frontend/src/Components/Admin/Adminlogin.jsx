@@ -2,11 +2,12 @@
 import { useNavigate } from 'react-router-dom';
 import logoArcite from "../../assets/logoArcite.png";
 import admin1 from '../../assets/admin1.jpg'
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import toast from "react-hot-toast";
 import {  useDispatch,useSelector} from 'react-redux'
 import { setAdminInfo } from '../../../Redux/Slices/AdminSlice';
 import { axiosInstanceAdmin } from '../../api/axiosInstance';
+
 
 
 export default function Example() {
@@ -20,11 +21,11 @@ const dispatch= useDispatch();
 
 
 
-  //useEffect(()=>{
- // if(adminUser){
- // navigate('/admindashboard');
- // }
- // },[adminUser,navigate])
+  useEffect(()=>{
+  if(adminUser){
+  navigate('/admindashboard');
+  }
+  },[adminUser,navigate])
 
 
 

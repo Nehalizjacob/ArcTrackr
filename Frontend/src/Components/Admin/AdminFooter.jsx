@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import footerbg from "../../../assets/certificates/footerbg1.avif";
-// import arciteLogo from '../../../assets/certificates/ARCITEBLACK1.png'
 import {
   faFacebookF,
   faInstagram,
@@ -14,54 +12,48 @@ import {
   faEnvelope,
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
-
 import { Link } from "react-router-dom";
 import logoArcite2 from "../../assets/logoArcite.png";
 
 function AdminFooter() {
-  // Scroll to top functionality
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer
-      className="bg-white text-gray-900 pt-3  border border-gray-100"
+      className="bg-white text-gray-900 pt-6 border-t border-gray-200"
       style={{
         backgroundImage: ``,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
- <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:py-6">
+      <div className="mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:py-6 text-[15px]">
         {/* Footer Content */}
-        <div className="flex flex-col md:flex-row justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
           {/* Left Section */}
-          <div className="flex-1 p">  
+          <div className="flex-1">
             <Link to="" className="flex items-center">
-              <img src={logoArcite2} className="h-16 mr-3" alt="ARCITE" />
+              <img src={logoArcite2} className="h-10 mr-3" alt="ARCITE" />
             </Link>
-            <p className="text-sm md:text-base mt-6 text-gray-800 leading-relaxed max-w-[700px] sm:max-w-[800px] mx-auto sm:mx-0 text-justify">
-  Urban CAD is designed to bring specialized software training to students across the globe. 
-  It aims to establish a network of training centres, bridging geographical gaps and 
-  empowering students to acquire industry-relevant skills, no matter where they are.
-</p>
-
-
+            <p className="text-base mt-5 text-gray-800 leading-relaxed max-w-[700px] sm:max-w-[800px] mx-auto sm:mx-0 text-justify">
+              ArcTrackr is a powerful platform designed to streamline and manage student training progress across multiple locations. 
+              It enables institutions to monitor performance, standardize reporting, and ensure consistent delivery of industry-relevant skills. 
+              Whether onsite or remote, ArcTrackr bridges the gap between training centers and administration with real-time insights.
+            </p>
           </div>
 
-          {/* Right Section - Social Links & Contact */}
-          <div className="flex-1 grid grid-cols-2 gap-1">
+          {/* Right Section */}
+          <div className="flex-1 grid grid-cols-2 gap-4 text-base">
             {/* Social Links */}
             <div>
-              <h2 className="font-syn mb-4 text-xl font-semibold text-navy">
-                Follow Us
-              </h2>
+              <h2 className="mb-4 text-lg font-semibold text-navy">Follow Us</h2>
               <ul className="space-y-3">
                 {[
                   { href: "https://www.facebook.com/arciteschooloftechnicaleducation/", icon: faFacebookF, label: "Facebook" },
-                  { href: "https://www.instagram.com/arcite.in/", icon: faInstagram, label: "Instagram" },                 
-                  { href: "https://x.com/arcite_in", icon: faXTwitter, label: "Twitter" },                  
+                  { href: "https://www.instagram.com/arcite.in/", icon: faInstagram, label: "Instagram" },
+                  { href: "https://x.com/arcite_in", icon: faXTwitter, label: "Twitter" },
                   { href: "https://www.linkedin.com/company/arc-institute-of-technical-education/", icon: faLinkedin, label: "LinkedIn" },
                   { href: "https://www.youtube.com/@arciteschooloftechnicaledu6571", icon: faYoutube, label: "YouTube" },
                 ].map(({ href, icon, label }) => (
@@ -70,14 +62,13 @@ function AdminFooter() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 transition-all hover:text-aqua hover:translate-x-2"
+                      className="flex items-center gap-3 hover:text-teal-500 hover:translate-x-1 transition-all"
                     >
                       <FontAwesomeIcon
                         icon={icon}
-                        size="lg"
-                        className="text-aqua hover:bg-aqua hover:text-navy p-2 rounded-full transition-colors"
+                        className="text-teal-500 hover:bg-teal-500 hover:text-white p-2 rounded-full transition-colors"
                       />
-                      <span className="text-lg">{label}</span>
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -86,18 +77,16 @@ function AdminFooter() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="font-syn mb-4 text-xl font-semibold text-navy">
-                Contact Us
-              </h2>
+              <h2 className="mb-4 text-lg font-semibold text-navy">Contact Us</h2>
               <ul className="space-y-3">
                 {[
                   { icon: faPhone, text: "9633221153" },
                   { icon: faMapMarkerAlt, text: "Kerala, India" },
-                  { icon: faEnvelope, text: "info@urbancad.in" },
+                  { icon: faEnvelope, text: "info@arctrackr.in" },
                 ].map(({ icon, text }) => (
-                  <li key={text} className="flex items-center gap-3 text-lg">
-                    <FontAwesomeIcon icon={icon} className="text-aqua" />
-                    <span>{text}</span>
+                  <li key={text} className="flex items-center gap-3">
+                    <FontAwesomeIcon icon={icon} className="text-teal-500" />
+                    {text}
                   </li>
                 ))}
               </ul>
@@ -106,30 +95,35 @@ function AdminFooter() {
         </div>
 
         {/* Footer Bottom */}
-        <div className=" flex flex-col md:flex-row sm:justify-between items-center mt-6 pt-4 border-t-2 border-gray-300 text-lg">
-        <span className="text-gray-900 text-center sm:text-left">
-  © 2025{" "}
-  <a href="#">
-    An{" "}
-    <a href="https://www.arcite.in/" className="font-syn text-aqua" style={{ display: 'inline-flex', alignItems: 'center' }}>
-ARCITE
-    </a>{" "}
-    Initiative
-  </a>
-</span>
+    {/* Footer Bottom */}
+<div className="mt-8 pt-5 border-t border-gray-300 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+  {/* Centered on mobile, left on desktop */}
+  <span className="w-full sm:w-auto text-base text-gray-700 text-center sm:text-left">
+    © 2025{" "}
+    <span>
+      An{" "}
+      <a
+        href="https://www.arcite.in/"
+        className="font-semibold text-teal-500 inline-flex items-center"
+      >
+        ARCITE
+      </a>{" "}
+      Initiative
+    </span>
+  </span>
 
+  {/* Right-aligned arrow */}
+  <div className="w-full sm:w-auto flex justify-center sm:justify-end">
+    <button
+      onClick={scrollToTop}
+      className="bg-teal-500 text-white p-3 w-12 h-12 rounded-full shadow-md rotate-[-45deg] hover:bg-navy hover:rotate-0 transition-all"
+      aria-label="Scroll to top"
+    >
+      <FontAwesomeIcon icon={faArrowUp} size="lg" />
+    </button>
+  </div>
+</div>
 
-          <div className="flex items-center gap-6 mt-4 sm:mt-0">
-            {/* Scroll to Top Button */}
-            <button
-              onClick={scrollToTop}
-              className=" bg-aqua text-white p-3 w-12 h-12 rounded-full shadow-lg transform rotate-[-45deg] transition-all duration-300 hover:bg-navy hover:rotate-0"
-              aria-label="Scroll to top"
-            >
-              <FontAwesomeIcon icon={faArrowUp} size="lg" />
-            </button>
-          </div>
-        </div>
       </div>
     </footer>
   );

@@ -18,7 +18,7 @@ function AdminNavbar() {
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/admin"); // Redirect to login page or admin login page
+    navigate("/"); // Redirect to login page or admin login page
   };
 
   return (
@@ -27,7 +27,7 @@ function AdminNavbar() {
         {/* Logo */}
         <img
           src={logoArcite}
-          className="h-12 w-32"
+          className="h-10 w-32"
           alt="Job Portal"
           width="100"
         />
@@ -61,15 +61,15 @@ function AdminNavbar() {
           <div className="ml-40 text-right text-bold mt-5 md:mt-0 border-t-2 border-white md:border-none">
             <a
               href="/admindashboard"
-              className="block md:inline-block text-navy hover:text-yellow-400 px-3 py-3 border-b-2 border-transparent md:border-none"
+              className="block md:inline-block text-navy hover:text-teal-400 px-3 py-3 border-b-2 border-transparent md:border-none"
             >
               Dashboard
             </a>
                  <a
               href="/sitevisits"
-              className="block md:inline-block text-navy hover:text-yellow-400 px-3 py-3 border-b-2 border-transparent md:border-none"
+              className="block md:inline-block text-navy hover:text-teal-400 px-3 py-3 border-b-2 border-transparent md:border-none"
             >
-              Site Visit Management System
+              SiteVisit ManagementSystem
             </a>
           </div>
         </div>
@@ -78,7 +78,7 @@ function AdminNavbar() {
         {adminUser && (
           <button
             onClick={handleLogout}
-            className="hidden md:flex px-4 py-2 text-right bg-aqua text-navy font-bold hover:bg-yellow-400 hover:text-black md:rounded"
+            className="hidden md:flex px-4 py-2 text-right bg-aqua text-navy font-bold hover:bg-teal-400 hover:text-black md:rounded"
           >
             Logout
           </button>

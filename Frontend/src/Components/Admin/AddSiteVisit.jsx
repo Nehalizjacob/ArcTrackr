@@ -32,7 +32,7 @@ function AddSiteVisit() {
 
       if (response.data.message) {
         toast.success(response.data.message);
-        navigate("/addsitevisits");
+        navigate("/sitevisits");
       }
     } catch (error) {
       if (error.response?.data?.error) {
