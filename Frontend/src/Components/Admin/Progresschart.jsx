@@ -36,7 +36,7 @@ export const options = {
   },
 };
 
-const LineChart = ({ data1, data2 }) => {
+const Progresschart = ({ data1, data2 }) => {
   const labels = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -65,4 +65,4 @@ const LineChart = ({ data1, data2 }) => {
   return <Line options={options} data={data} />;
 };
 
-export default LineChart;
+export default Progresschart;
