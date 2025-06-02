@@ -148,7 +148,7 @@ function AdminRegister() {
 
                 <button
                   type="submit"
-                  className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium bg-customColor text-white hover:bg-customColor-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-customColor"
+                  className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                 >
                   Signup
                 </button>
